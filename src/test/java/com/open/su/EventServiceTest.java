@@ -188,7 +188,7 @@ class EventServiceTest {
 
         asserter.assertFailedWith(() -> {
             Event event = new Event();
-            event.name = "testCreateEvent 1";
+            event.name = ((Event) asserter.getData("event1")).name;
             event.description = "Test description";
             event.price = 10.0;
             event.location = "Test location";
@@ -223,6 +223,7 @@ class EventServiceTest {
             event1.createdAt = new Date();
             event1.updatedAt = new Date();
             Event event2 = new Event();
+            event2.id = UUID.randomUUID();
             event2.name = "testUpdateEvent 2";
             event2.description = "Test description";
             event2.price = 10.0;
@@ -262,6 +263,7 @@ class EventServiceTest {
 
         asserter.assertFailedWith(() -> {
             Event event = new Event();
+            event.id = UUID.randomUUID();
             event.name = "testUpdateEvent 3";
             event.description = "Test description";
             event.price = -1.0;
@@ -278,6 +280,7 @@ class EventServiceTest {
 
         asserter.assertFailedWith(() -> {
             Event event = new Event();
+            event.id = UUID.randomUUID();
             event.name = "testUpdateEvent 1";
             event.description = "Test description";
             event.price = 10.0;
@@ -294,7 +297,8 @@ class EventServiceTest {
 
         asserter.assertFailedWith(() -> {
             Event event = new Event();
-            event.name = "testUpdateEvent 2";
+            event.id = UUID.randomUUID();
+            event.name = ((Event) asserter.getData("event2")).name;
             event.description = "Test description";
             event.price = 10.0;
             event.location = "Test location";

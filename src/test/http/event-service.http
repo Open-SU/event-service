@@ -1,0 +1,42 @@
+### List Events
+GRPC localhost:{{port}}/event.EventGrpc/ListEvents
+
+### Get Event details
+GRPC localhost:{{port}}/event.EventGrpc/GetEventDetails
+
+{
+  "id": {{id}}
+}
+
+### Create Event
+GRPC localhost:{{port}}/event.EventGrpc/CreateEvent
+
+{
+  "name": "Event 1",
+  "description": "Event 1 Description",
+  "start_date": "2021-01-01T00:00:00Z",
+  "end_date": "2021-01-01T00:00:00Z",
+  "price": 100,
+  "location": "Event 1 Location",
+  "organizer_id": "91b1f21f-0568-4f5d-a277-a40bd62f3c82"
+}
+
+### Update Event
+GRPC localhost:{{port}}/event.EventGrpc/UpdateEvent
+
+{
+  "id": {{id}},
+  "name": "Event 2",
+  "description": "Event 1 Description",
+  "start_date": "2021-01-01T00:00:00Z",
+  "end_date": "2021-01-01T00:00:00Z",
+  "location": "Event 1 Location",
+  "organizer_id": "91b1f21f-0568-4f5d-a277-a40bd62f3c82"
+}
+
+### Delete Event
+GRPC localhost:{{port}}/event.EventGrpc/DeleteEvent
+
+{
+  "id": {{id}}
+}
